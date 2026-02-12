@@ -113,35 +113,47 @@ body{
 .md a:hover{
   text-decoration: underline;
 }
-
 /* ===========================
-   MOVING HEADER
+   MOVING BANNER (MARQUEE)
 =========================== */
 
-.marquee {
+.marquee{
+  position: sticky;
+  top: 0;
+  z-index: 999;
   width: 100%;
   overflow: hidden;
-  background: #00c853; /* ירוק חזק */
-  padding: 20px 0;
+  background: #00c853; /* ירוק */
+  border-bottom: 2px solid rgba(0,0,0,0.25);
 }
 
-.marquee-content {
-  display: inline-block;
+.marquee-track{
+  display: flex;
+  align-items: center;
+  gap: 70px;
   white-space: nowrap;
-  font-family: 'Reisinger', sans-serif;
-  font-size: 60px;
-  color: #ff1744; /* אדום חזק */
+  padding: 14px 0;
+
+  /* האנימציה עצמה */
+  animation: marqueeScroll 10s linear infinite;
+  will-change: transform;
+}
+
+.marquee-text{
+  font-family: 'Reisinger', sans-serif; /* פונט הכותרות שלך */
   font-weight: 700;
+  font-size: 56px;
+  line-height: 1;
+  letter-spacing: 2px;
+  color: #ff1744; /* אדום */
 
-  animation: scrollText 15s linear infinite;
+  /* קצת "ארקייד" */
+  text-shadow:
+    0 2px 0 rgba(0,0,0,0.35),
+    0 0 18px rgba(255,23,68,0.35);
 }
 
-@keyframes scrollText {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(-100%);
-  }
+@keyframes marqueeScroll{
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
-
