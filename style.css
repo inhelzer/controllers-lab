@@ -1,4 +1,13 @@
 /* Tech + playful vibe */
+
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('assets/fonts/MyFont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 :root{
   --bg: #0b0f19;
   --card: rgba(255,255,255,0.06);
