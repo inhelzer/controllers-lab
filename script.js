@@ -1,23 +1,20 @@
-// playful tiny interactions
-const btn = document.getElementById("toggleMode");
-const body = document.body;
+async function loadMarkdown() {
+  const el = document.getElementById("md");
 
-// remember mode
-const saved = localStorage.getItem("mode");
-if (saved === "light") body.classList.add("light");
+  try {
+    const res = await fetch("./content.md", { cache: "no-store" });
+    if (!res.ok) throw new Error("content.md not found");
 
-btn?.addEventListener("click", () => {
-  body.classList.toggle("light");
-  localStorage.setItem("mode", body.classList.contains("light") ? "light" : "dark");
-});
+    const md = await res.text();
 
-// tiny hover sound-free "wiggle" (CSS-free)
-document.querySelectorAll(".postTitle").forEach(h => {
-  h.addEventListener("mouseenter", () => {
-    h.style.transform = "rotate(-0.6deg)";
-    h.style.transition = "transform 120ms ease";
-  });
-  h.addEventListener("mouseleave", () => {
-    h.style.transform = "rotate(0deg)";
-  });
-});
+    // Convert Markdown -> HTML
+    el.innerHTML = marked.parse(md);
+  } catch (err) {
+    el.innerHTML = `
+      <h1>לא הצלחתי לטעון את content.md</h1>
+      <p>בדקי שהקובץ קיים בריפו באותו נתיב, ושמו בדיוק <code>content.md</code>.</p>
+    `;
+  }
+}
+
+loadMarkdown();
