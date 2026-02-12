@@ -113,3 +113,35 @@ body{
 .md a:hover{
   text-decoration: underline;
 }
+
+/* ===========================
+   MOVING HEADER
+=========================== */
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  background: #00c853; /* ירוק חזק */
+  padding: 20px 0;
+}
+
+.marquee-content {
+  display: inline-block;
+  white-space: nowrap;
+  font-family: 'Reisinger', sans-serif;
+  font-size: 60px;
+  color: #ff1744; /* אדום חזק */
+  font-weight: 700;
+
+  animation: scrollText 15s linear infinite;
+}
+
+@keyframes scrollText {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
