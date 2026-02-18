@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Style Lab — Alternative Controllers</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="lab">
+
+  <!-- Banner test -->
+  <div class="marquee">
+    <div class="marquee-inner">
+      <div class="marquee-track">
+        <span class="marquee-text">Alternative Controllers</span>
+        <span class="marquee-text">Alternative Controllers</span>
+        <span class="marquee-text">Alternative Controllers</span>
+        <span class="marquee-text">Alternative Controllers</span>
+        <span class="marquee-text">Alternative Controllers</span>
+      </div>
+      <div class="marquee-track" aria-hidden="true">
+        <span class="marquee-text">Alternative Controllers</span>
+        <span class="marquee-text">Alternative Controllers</span>
+        <span class="marquee-text">Alternative Controllers</span>
+        <span class="marquee-text">Alternative Controllers</span>
+        <span class="marquee-text">Alternative Controllers</span>
+      </div>
+    </div>
+  </div>
+
+  <header class="wrap">
+    <div class="labHeader">
+      <h1 class="siteTitle">Alternative Controllers</h1>
+      <p class="tagline">עמוד בדיקה: כאן מכוונים צבעים / פונטים / גדלים לפני שבונים את האתר האמיתי.</p>
+
+      <div class="labControls">
+        <button class="btn" id="toggleTheme" type="button">🌗 מצב כהה/בהיר</button>
+        <button class="btn" id="toggleGrid" type="button">▦ הדלק/כבה גריד</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- Typography scale -->
+    <section class="section">
+      <h2 class="secTitle">טיפוגרפיה</h2>
+
+      <div class="cardLite">
+        <h1 class="h1">H1 — כותרת ראשית</h1>
+        <h2 class="h2">H2 — כותרת משנה</h2>
+        <h3 class="h3">H3 — כותרת לפוסט</h3>
+
+        <p class="p">
+          זה טקסט רגיל (body). מטרת הפסקה לבדוק קריאות, אורך שורה וריווח.
+          פה יש <strong>מודגש</strong>, פה <em>נטוי</em>, וכאן <a href="#">קישור</a>.
+        </p>
+
+        <p class="small">
+          זה טקסט קטן (metadata). לדוגמה: תאריך · קטגוריה · תגיות.
+        </p>
+
+        <div class="chips">
+          <span class="chip">🧠 UX גופני</span>
+          <span class="chip">🛠️ בנייה</span>
+          <span class="chip">💾 קוד</span>
+          <span class="chip">🤣 הומור</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Color palette -->
+    <section class="section">
+      <h2 class="secTitle">צבעים</h2>
+
+      <div class="swatches">
+        <div class="swatch"><div class="box bg"></div><div class="label">--bg</div></div>
+        <div class="swatch"><div class="box surface"></div><div class="label">--surface</div></div>
+        <div class="swatch"><div class="box text"></div><div class="label">--text</div></div>
+        <div class="swatch"><div class="box neon"></div><div class="label">--accent</div></div>
+        <div class="swatch"><div class="box neon2"></div><div class="label">--accent2</div></div>
+      </div>
+    </section>
+
+    <!-- Post mock -->
+    <section class="section">
+      <h2 class="secTitle">דוגמת פוסט</h2>
+
+      <article class="postMock">
+        <header>
+          <h3 class="postTitle">פוסט לדוגמה — דוושות ארקייד 🚲🕹️</h3>
+          <div class="metaLine">פברואר 2026 · מכני + חיישנים</div>
+        </header>
+
+        <p class="p">
+          טקסט קצר שמסביר מה בנינו ומה למדנו. כאן את בודקת אם הגוף נוח, אם הפסקאות ארוכות מדי,
+          ואם ההיררכיה בין כותרת/מטא/טקסט ברורה.
+        </p>
+
+        <div class="gallery">
+          <figure><img src="assets/img/demo1.jpg" alt=""><figcaption>תמונה 1</figcaption></figure>
+          <figure><img src="assets/img/demo2.jpg" alt=""><figcaption>תמונה 2</figcaption></figure>
+          <figure><img src="assets/img/demo3.jpg" alt=""><figcaption>תמונה 3</figcaption></figure>
+        </div>
+
+        <div class="videoBox">
+          <div class="videoFrame">
+            <iframe src="https://www.youtube.com/embed/XXXXXXX" allowfullscreen></iframe>
+          </div>
+          <div class="small">וידאו כאן רק כדי לבדוק גדלים ומרווחים.</div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Image size tests -->
+    <section class="section">
+      <h2 class="secTitle">בדיקת גדלי תמונות</h2>
+
+      <div class="imgTests">
+        <div class="cardLite">
+          <div class="small">16:9 (Wide)</div>
+          <img class="imgWide" src="assets/img/demoWide.jpg" alt="">
+        </div>
+
+        <div class="cardLite">
+          <div class="small">1:1 (Square)</div>
+          <img class="imgSquare" src="assets/img/demoSquare.jpg" alt="">
+        </div>
+
+        <div class="cardLite">
+          <div class="small">3:4 (Portrait)</div>
+          <img class="imgPortrait" src="assets/img/demoPortrait.jpg" alt="">
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
