@@ -3,142 +3,104 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Style Lab — Alternative Controllers</title>
+  <title>Alternative Controllers Lab</title>
 
+  <!-- body font -->
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body class="lab">
+<body>
 
-  <!-- Banner test -->
-  <div class="marquee">
-    <div class="marquee-inner">
-      <div class="marquee-track">
-        <span class="marquee-text">Alternative Controllers</span>
-        <span class="marquee-text">Alternative Controllers</span>
-        <span class="marquee-text">Alternative Controllers</span>
-        <span class="marquee-text">Alternative Controllers</span>
-        <span class="marquee-text">Alternative Controllers</span>
+  <!-- TOP BAR (red) + inner nav (white pill) -->
+  <div class="topBar">
+    <div class="topNav">
+      <div class="topLeft">
+        <!-- change extension if needed: logoN1.svg / logoN1.jpg -->
+        <img class="navLogo" src="assets/img/logo/logoN1.jpg" alt="Logo">
+        <a class="topBrand" href="#">Alternative Controllers Lab</a>
       </div>
-      <div class="marquee-track" aria-hidden="true">
-        <span class="marquee-text">Alternative Controllers</span>
-        <span class="marquee-text">Alternative Controllers</span>
-        <span class="marquee-text">Alternative Controllers</span>
-        <span class="marquee-text">Alternative Controllers</span>
-        <span class="marquee-text">Alternative Controllers</span>
+
+      <div class="topRight">
+        <a class="topLink" href="#about">Campus Peres high school</a>
+        <a class="topLink" href="#posts">Game Design</a>
       </div>
     </div>
   </div>
 
-  <header class="wrap">
-    <div class="labHeader">
-      <h1 class="siteTitle">Alternative Controllers</h1>
-      <p class="tagline">עמוד בדיקה: כאן מכוונים צבעים / פונטים / גדלים לפני שבונים את האתר האמיתי.</p>
+  <main class="page">
 
-      <div class="labControls">
-        <button class="btn" id="toggleTheme" type="button">🌗 מצב כהה/בהיר</button>
-        <button class="btn" id="toggleGrid" type="button">▦ הדלק/כבה גריד</button>
-      </div>
-    </div>
-  </header>
+    <!-- HERO (yellow background like poster) -->
+    <section class="hero" id="about">
+      <div class="heroInner">
 
-  <main class="wrap">
-
-    <!-- Typography scale -->
-    <section class="section">
-      <h2 class="secTitle">טיפוגרפיה</h2>
-
-      <div class="cardLite">
-        <h1 class="h1">H1 — כותרת ראשית</h1>
-        <h2 class="h2">H2 — כותרת משנה</h2>
-        <h3 class="h3">H3 — כותרת לפוסט</h3>
-
-        <p class="p">
-          זה טקסט רגיל (body). מטרת הפסקה לבדוק קריאות, אורך שורה וריווח.
-          פה יש <strong>מודגש</strong>, פה <em>נטוי</em>, וכאן <a href="#">קישור</a>.
-        </p>
-
-        <p class="small">
-          זה טקסט קטן (metadata). לדוגמה: תאריך · קטגוריה · תגיות.
-        </p>
-
-        <div class="chips">
-          <span class="chip">🧠 UX גופני</span>
-          <span class="chip">🛠️ בנייה</span>
-          <span class="chip">💾 קוד</span>
-          <span class="chip">🤣 הומור</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Color palette -->
-    <section class="section">
-      <h2 class="secTitle">צבעים</h2>
-
-      <div class="swatches">
-        <div class="swatch"><div class="box bg"></div><div class="label">--bg</div></div>
-        <div class="swatch"><div class="box surface"></div><div class="label">--surface</div></div>
-        <div class="swatch"><div class="box text"></div><div class="label">--text</div></div>
-        <div class="swatch"><div class="box neon"></div><div class="label">--accent</div></div>
-        <div class="swatch"><div class="box neon2"></div><div class="label">--accent2</div></div>
-      </div>
-    </section>
-
-    <!-- Post mock -->
-    <section class="section">
-      <h2 class="secTitle">דוגמת פוסט</h2>
-
-      <article class="postMock">
-        <header>
-          <h3 class="postTitle">פוסט לדוגמה — דוושות ארקייד 🚲🕹️</h3>
-          <div class="metaLine">פברואר 2026 · מכני + חיישנים</div>
-        </header>
-
-        <p class="p">
-          טקסט קצר שמסביר מה בנינו ומה למדנו. כאן את בודקת אם הגוף נוח, אם הפסקאות ארוכות מדי,
-          ואם ההיררכיה בין כותרת/מטא/טקסט ברורה.
-        </p>
-
-        <div class="gallery">
-          <figure><img src="assets/img/demo1.jpg" alt=""><figcaption>תמונה 1</figcaption></figure>
-          <figure><img src="assets/img/demo2.jpg" alt=""><figcaption>תמונה 2</figcaption></figure>
-          <figure><img src="assets/img/demo3.jpg" alt=""><figcaption>תמונה 3</figcaption></figure>
-        </div>
-
-        <div class="videoBox">
-          <div class="videoFrame">
-            <iframe src="https://www.youtube.com/embed/XXXXXXX" allowfullscreen></iframe>
+        <div class="heroLeft">
+          <div class="schoolBlock">
+            <h2 class="schoolTitle">Campus Peres High school</h2>
+            <div class="schoolHeb">
+              קמפוס פרס, חולון<br>
+              ברוח הייטק-קריירה
+            </div>
           </div>
-          <div class="small">וידאו כאן רק כדי לבדוק גדלים ומרווחים.</div>
+
+          <!-- alt ctrl mark -->
+          <div class="altCtrl">
+            <span class="altBox">alt</span>
+            <span class="ctrlWord">ctrl</span>
+          </div>
         </div>
-      </article>
+
+        <div class="heroRight">
+          <!-- put your hero image here -->
+          <img class="heroImg" src="assets/img/hero.jpg" alt="Hero image">
+        </div>
+
+      </div>
     </section>
 
-    <!-- Image size tests -->
-    <section class="section">
-      <h2 class="secTitle">בדיקת גדלי תמונות</h2>
-
-      <div class="imgTests">
-        <div class="cardLite">
-          <div class="small">16:9 (Wide)</div>
-          <img class="imgWide" src="assets/img/demoWide.jpg" alt="">
+    <!-- WHY (blue block) -->
+    <section class="why" id="posts">
+      <div class="whyInner">
+        <div class="whyTitle">
+          <div class="whyBig">Alternative<br>Controllers Lab</div>
+          <div class="whyBig">Why?</div>
         </div>
 
-        <div class="cardLite">
-          <div class="small">1:1 (Square)</div>
-          <img class="imgSquare" src="assets/img/demoSquare.jpg" alt="">
-        </div>
+        <div class="whyText">
+          <p>
+            במגמה אנו בוחרים לעסוק גם במשחקי מחשב פיזיים: לצד הפיתוח הדיגיטלי, התלמידים מתכננים ובונים אמצעי שליטה פיזיים —
+            ממשקים שמתרחבים מעבר למסך ומתקיימים בעולם הממשי.
+          </p>
+          <p>
+            העבודה משלבת תכנון וייצור בידיים, חשיבה ארגונומית, ופיתוח חוויית משתמש גופנית וחברתית —
+            כזו שמתייחסת לתנועה, למאמץ, לנוכחות במרחב ולמפגש בין שחקנים.
+          </p>
+          <p>
+            כאן נשתמש בעמוד כ”יומן מעבדה”: ניסויים, הצלחות, תקלות מצחיקות, ותיעוד של תהליך העיצוב.
+          </p>
 
-        <div class="cardLite">
-          <div class="small">3:4 (Portrait)</div>
-          <img class="imgPortrait" src="assets/img/demoPortrait.jpg" alt="">
+          <div class="whyLinks">
+            <a class="btnBlue" href="https://example.com" target="_blank" rel="noopener">קישור לאתר אחר</a>
+            <a class="btnBlue outline" href="mailto:inbalh@hadash-holon.org.il">inbalh@hadash-holon.org.il</a>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- BIG FOOTER (blue, giant type) -->
+    <footer class="bigFooter">
+      <div class="bigFooterInner">
+        <h1 class="footerBig">Alt.Ctrl at Campus Peres</h1>
+
+        <div class="footerLogoRow">
+          <!-- optional: place logos in footer too -->
+          <img class="footerLogo" src="assets/img/logo/logoN1.jpg" alt="Logo">
+        </div>
+      </div>
+    </footer>
 
   </main>
 
-  <script src="script.js"></script>
 </body>
 </html>
