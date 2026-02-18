@@ -1,48 +1,156 @@
+---
+layout: null
+---
+
 <!doctype html>
 <html lang="he" dir="rtl">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Alternative Controllers</title>
+  <title>{{ site.title }}</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
 <body>
 
+  <!-- TOP BAR -->
+  <div class="topBar">
+    <div class="topNav">
+      <div class="topLeft">
+        <a class="topBrand" href="#top">{{ site.title }}</a>
+      </div>
 
-<div class="marquee">
-  <div class="marquee-inner">
-    <div class="marquee-track">
-      <span class="marquee-text">Alternative Controllers</span>
-      <span class="marquee-text">Alternative Controllers</span>
-      <span class="marquee-text">Alternative Controllers</span>
-      <span class="marquee-text">Alternative Controllers</span>
-      <span class="marquee-text">Alternative Controllers</span>
-      <span class="marquee-text">Alternative Controllers</span>
-    </div>
-
-    <div class="marquee-track" aria-hidden="true">
-      <span class="marquee-text">Alternative Controllers</span>
-      <span class="marquee-text">Alternative Controllers</span>
-      <span class="marquee-text">Alternative Controllers</span>
-      <span class="marquee-text">Alternative Controllers</span>
-      <span class="marquee-text">Alternative Controllers</span>
-      <span class="marquee-text">Alternative Controllers</span>
+      <div class="topRight">
+        <a class="topLink" href="https://www.hadash-holon.org.il/" target="_blank" rel="noopener">Campus Peres high school</a>
+        <a class="topLink" href="https://sites.google.com/hadash-holon.org.il/arcade01/%D7%A2%D7%9E%D7%95%D7%93-%D7%94%D7%91%D7%99%D7%AA" target="_blank" rel="noopener">Game Design</a>
+      </div>
     </div>
   </div>
-</div>
 
+  <main class="page" id="top">
 
+    <!-- HERO -->
+    <section class="hero">
+      <div class="heroInner">
 
-  <main class="wrap">
-    <!-- כאן התוכן מ-content.md ייטען -->
-    <article id="md" class="md"></article>
+        <div class="heroLeft">
+          <div class="heroSiteLogo">
+            <img class="siteLogoImg" src="assets/img/logo/logoN1.png" alt="Alternative Controllers Lab">
+          </div>
+
+          <div class="schoolBlock">
+            <h2 class="schoolTitle">Campus Peres High school</h2>
+            <div class="schoolHeb">
+              קמפוס פרס, חולון<br>
+              ברוח הייטק-קריירה
+            </div>
+          </div>
+
+          <div class="altCtrl">
+            <span class="altBox">alt</span>
+            <span class="ctrlWord">ctrl</span>
+          </div>
+        </div>
+
+        <div class="heroRight">
+          <img class="heroImg" src="assets/img/hero.jpg" alt="Hero image">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- WHY -->
+    <section class="why" id="about">
+      <div class="whyInner">
+
+        <div class="whyText">
+          <p>
+            במגמה אנו בוחרים לעסוק גם במשחקי מחשב פיזיים: לצד הפיתוח הדיגיטלי, התלמידים מתכננים ובונים אמצעי שליטה פיזיים —
+            ממשקים שמתרחבים מעבר למסך ומתקיימים בעולם הממשי.
+          </p>
+          <p>
+            העבודה משלבת תכנון וייצור בידיים, חשיבה ארגונומית, ופיתוח חוויית משתמש גופנית וחברתית —
+            כזו שמתייחסת לתנועה, למאמץ, לנוכחות במרחב ולמפגש בין שחקנים.
+          </p>
+          <p>
+            כאן נשתמש בעמוד כ”יומן מעבדה”: ניסויים, הצלחות, תקלות מצחיקות, ותיעוד של תהליך העיצוב.
+          </p>
+        </div>
+
+        <div class="whyTitle">
+          <div class="whyBig">Alternative<br>Controllers Lab</div>
+          <div class="whyBig">?Why</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- POSTS: built automatically from _posts -->
+    <section class="posts" id="posts">
+      {% for post in site.posts %}
+        <article class="post">
+          <header class="postHead">
+            <h3 class="postTitle">{{ post.title }}</h3>
+
+            {% if post.subtitle %}
+              <p class="postLead">{{ post.subtitle }}</p>
+            {% endif %}
+          </header>
+
+          {% if post.how_title or post.how_text %}
+          <div class="how">
+            <h4 class="howTitle">{{ post.how_title | default: "How it works" }}</h4>
+            {% if post.how_text %}
+              <p class="howText">{{ post.how_text }}</p>
+            {% endif %}
+          </div>
+          {% endif %}
+
+          {% if post.images %}
+          <div class="mediaGrid">
+            {% for img in post.images %}
+              <figure class="mediaItem">
+                <img src="{{ img }}" alt="" loading="lazy">
+                {% if post.image_captions and post.image_captions[forloop.index0] %}
+                  <figcaption>{{ post.image_captions[forloop.index0] }}</figcaption>
+                {% endif %}
+              </figure>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          {% if post.canva_embed %}
+          <div class="embed">
+            <div class="embedFrame">
+              <iframe
+                src="{{ post.canva_embed }}"
+                loading="lazy"
+                allowfullscreen="allowfullscreen"
+                allow="fullscreen">
+              </iframe>
+            </div>
+          </div>
+          {% endif %}
+
+          {% if post.body and post.content != "" %}
+          <div class="postBody">
+            {{ post.content }}
+          </div>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </section>
+
   </main>
 
-  <!-- ספרייה שממירה Markdown ל-HTML -->
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script src="script.js"></script>
+  <!-- FULL BLEED FOOTER -->
+  <footer class="bigFooter">
+    <div class="bigFooterInner">
+      <h1 class="footerBig">Alt.Ctrl at Campus Peres</h1>
+    </div>
+  </footer>
+
 </body>
 </html>
