@@ -1,5 +1,10 @@
 title: "Alternative Controllers Lab"
+baseurl: "/controllers-lab"
 description: "Alt.Ctrl at Campus Peres — blog"
 markdown: kramdown
 permalink: /:year/:month/:day/:title/
 timezone: Asia/Jerusalem
+
+
+
+
