@@ -16,7 +16,7 @@
   --gray:#F1F1F1;
 
   --maxw:1180px;
-  --radius:24px;
+  --radius:0px;
   --stroke:4px;
 }
 
@@ -37,7 +37,7 @@ body{
   margin:0 auto;
   background:var(--gray);
   border:var(--stroke) solid var(--red);
-  border-radius:28px;
+  border-radius:0px;
   padding:14px 18px;
   display:flex;
   align-items:center;
@@ -86,7 +86,7 @@ body{
   background:var(--red);
   color:var(--white);
   padding:10px 16px;
-  border-radius:8px;
+  border-radius:0px;
   font-family:'Reisinger','Assistant',sans-serif;
   font-weight:700;
   font-size:44px;
@@ -104,7 +104,7 @@ body{
   width:100%;
   height:auto;
   display:block;
-  border-radius:18px;
+  border-radius:0px;
 }
 
 /* WHY */
@@ -113,7 +113,7 @@ body{
 .whyInner{
   background:var(--blue);
   color:var(--white);
-  border-radius:22px;
+  border-radius:0px;
   padding:46px 44px;
   display:grid;
   grid-template-columns:1.1fr .9fr;
@@ -140,7 +140,7 @@ body{
 .post{
   margin-top:18px;
   padding:26px;
-  border-radius:22px;
+  border-radius:0px;
   background:rgba(255,255,255,0.18);
   border:2px solid rgba(17,17,17,0.18);
 }
@@ -190,7 +190,7 @@ body{
 .mediaItem{
   grid-column:span 4;
   margin:0;
-  border-radius:16px;
+  border-radius:0px;
   overflow:hidden;
   border:2px solid rgba(17,17,17,0.18);
   background:rgba(255,255,255,0.22);
@@ -212,7 +212,7 @@ body{
 /* Canva embed */
 .embed{ margin-top:14px; }
 .embedFrame{
-  border-radius:16px;
+  border-radius:0px;
   overflow:hidden;
   border:2px solid rgba(17,17,17,0.18);
   background:rgba(255,255,255,0.18);
@@ -272,7 +272,7 @@ body{
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 18px;
+    border-radius: 0px;
   }
 
 

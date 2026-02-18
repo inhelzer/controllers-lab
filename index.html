@@ -1,13 +1,13 @@
 ---
-layout: null
 ---
 
+
 <!doctype html>
-<html lang="he" dir="rtl">
+<html lang="he" dir="ltr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>{{ Alt.Ctrl at Peres }}</title>
+  <title>{{ site.title }}</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css" />
@@ -19,7 +19,7 @@ layout: null
   <div class="topBar">
     <div class="topNav">
       <div class="topLeft">
-        <a class="topBrand" href="#top">{{ Alt.Ctrl at Peres }}</a>
+        <a class="topBrand" href="#top">{{ site.title }}</a>
       </div>
 
       <div class="topRight">
@@ -83,7 +83,8 @@ layout: null
     <!-- POSTS: built automatically from _posts -->
     <section class="posts" id="posts">
       {% for post in site.posts %}
-        <article class="post">
+      
+      <article class="post">
           <header class="postHead">
             <h3 class="postTitle">{{ post.title }}</h3>
 
