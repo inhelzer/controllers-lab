@@ -1,152 +1,123 @@
----
----
+<!-- HEAD (injected from here, because index.md is markdown) -->
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css" />
 
+<!-- TOP BAR -->
+<div class="topBar">
+  <div class="topNav">
+    <div class="topLeft">
+      <a class="topBrand" href="#top">{{ site.title }}</a>
+    </div>
 
-<!doctype html>
-<html lang="he" dir="rtl">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>{{ site.title }}</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css" />
-</head>
-
-<body>
-<p>Posts count: {{ site.posts | size }}</p>
-
-  <!-- TOP BAR -->
-  <div class="topBar">
-    <div class="topNav">
-      <div class="topLeft">
-        <a class="topBrand" href="#top">{{ site.title }}</a>
-      </div>
-
-      <div class="topRight">
-        <a class="topLink" href="https://www.hadash-holon.org.il/" target="_blank" rel="noopener">Campus Peres high school</a>
-        <a class="topLink" href="https://sites.google.com/hadash-holon.org.il/arcade01/%D7%A2%D7%9E%D7%95%D7%93-%D7%94%D7%91%D7%99%D7%AA" target="_blank" rel="noopener">Game Design</a>
-      </div>
+    <div class="topRight">
+      <a class="topLink" href="https://www.hadash-holon.org.il/" target="_blank" rel="noopener">Campus Peres high school</a>
+      <a class="topLink" href="https://sites.google.com/hadash-holon.org.il/arcade01/%D7%A2%D7%9E%D7%95%D7%93-%D7%94%D7%91%D7%99%D7%AA" target="_blank" rel="noopener">Game Design</a>
     </div>
   </div>
+</div>
 
-  <main class="page" id="top">
+<main class="page" id="top">
 
+  <!-- HERO (image LEFT, logo RIGHT) -->
+  <section class="hero">
+    <div class="heroInner">
 
-    <!-- HERO (image RIGHT, titles LEFT) -->
-    <section class="hero">
-      <div class="heroInner">
-
-        <!-- LEFT: text + logo -->
-        <div class="heroLeft">
-          <img class="heroImg" src="assets/img/hero.jpg" alt="Hero image">
-          </div>
-
-          <!-- אם תרצי אחר כך להחזיר טקסט/כותרות כאן - זה המקום -->
-        </div>
-
-        <!-- RIGHT: image -->
-        <div class="heroRight">
-          <div class="heroSiteLogo">
-            <img class="siteLogoImg" src="assets/img/logo/logoN1.png" alt="Alternative Controllers Lab">
-          </div>
-
+      <div class="heroLeft">
+        <img class="heroImg" src="{{ site.baseurl }}/assets/img/hero.jpg" alt="Hero image">
       </div>
-    </section>
 
-
-    <!-- WHY -->
-    <section class="why" id="about">
-      <div class="whyInner">
-
-        <div class="whyText">
-          <p>
-            במגמה אנו בוחרים לעסוק גם במשחקי מחשב פיזיים: לצד הפיתוח הדיגיטלי, התלמידים מתכננים ובונים אמצעי שליטה פיזיים —
-            ממשקים שמתרחבים מעבר למסך ומתקיימים בעולם הממשי.
-          </p>
-          <p>
-            העבודה משלבת תכנון וייצור בידיים, חשיבה ארגונומית, ופיתוח חוויית משתמש גופנית וחברתית —
-            כזו שמתייחסת לתנועה, למאמץ, לנוכחות במרחב ולמפגש בין שחקנים.
-          </p>
-          <p>
-            כאן נשתמש בעמוד כ”יומן מעבדה”: ניסויים, הצלחות, תקלות מצחיקות, ותיעוד של תהליך העיצוב.
-          </p>
+      <div class="heroRight">
+        <div class="heroSiteLogo">
+          <img class="siteLogoImg" src="{{ site.baseurl }}/assets/img/logo/logoN1.png" alt="Alternative Controllers Lab">
         </div>
-
-        <div class="whyTitle">
-          <div class="whyBig">Alternative<br>Controllers Lab</div>
-          <div class="whyBig">?Why</div>
-        </div>
-
       </div>
-    </section>
 
-    <!-- POSTS: built automatically from _posts -->
-    <section class="posts" id="posts">
-      {% for post in site.posts %}
-      
-      <article class="post">
-          <header class="postHead">
-            <h3 class="postTitle">{{ post.title }}</h3>
-
-            {% if post.subtitle %}
-              <p class="postLead">{{ post.subtitle }}</p>
-            {% endif %}
-          </header>
-
-          {% if post.how_title or post.how_text %}
-          <div class="how">
-            <h4 class="howTitle">{{ post.how_title | default: "How it works" }}</h4>
-            {% if post.how_text %}
-              <p class="howText">{{ post.how_text }}</p>
-            {% endif %}
-          </div>
-          {% endif %}
-
-          {% if post.images %}
-          <div class="mediaGrid">
-            {% for img in post.images %}
-              <figure class="mediaItem">
-                <img src="{{ img }}" alt="" loading="lazy">
-                {% if post.image_captions and post.image_captions[forloop.index0] %}
-                  <figcaption>{{ post.image_captions[forloop.index0] }}</figcaption>
-                {% endif %}
-              </figure>
-            {% endfor %}
-          </div>
-          {% endif %}
-
-          {% if post.canva_embed %}
-          <div class="embed">
-            <div class="embedFrame">
-              <iframe
-                src="{{ post.canva_embed }}"
-                loading="lazy"
-                allowfullscreen="allowfullscreen"
-                allow="fullscreen">
-              </iframe>
-            </div>
-          </div>
-          {% endif %}
-
-          {% if post.body and post.content != "" %}
-          <div class="postBody">
-            {{ post.content }}
-          </div>
-          {% endif %}
-        </article>
-      {% endfor %}
-    </section>
-
-  </main>
-
-  <!-- FULL BLEED FOOTER -->
-  <footer class="bigFooter">
-    <div class="bigFooterInner">
-      <h1 class="footerBig">Alt.Ctrl at Campus Peres</h1>
     </div>
-  </footer>
+  </section>
 
-</body>
+  <!-- WHY -->
+  <section class="why" id="about">
+    <div class="whyInner">
 
-</html>
+      <div class="whyText">
+        <p>
+          במגמה אנו בוחרים לעסוק גם במשחקי מחשב פיזיים: לצד הפיתוח הדיגיטלי, התלמידים מתכננים ובונים אמצעי שליטה פיזיים —
+          ממשקים שמתרחבים מעבר למסך ומתקיימים בעולם הממשי.
+        </p>
+        <p>
+          העבודה משלבת תכנון וייצור בידיים, חשיבה ארגונומית, ופיתוח חוויית משתמש גופנית וחברתית —
+          כזו שמתייחסת לתנועה, למאמץ, לנוכחות במרחב ולמפגש בין שחקנים.
+        </p>
+        <p>
+          כאן נשתמש בעמוד כ”יומן מעבדה”: ניסויים, הצלחות, תקלות מצחיקות, ותיעוד של תהליך העיצוב.
+        </p>
+      </div>
+
+      <div class="whyTitle">
+        <div class="whyBig">Alternative<br>Controllers Lab</div>
+        <div class="whyBig">?Why</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- POSTS -->
+  <section class="posts" id="posts">
+    {% for post in site.posts %}
+    <article class="post">
+      <header class="postHead">
+        <h3 class="postTitle">{{ post.title }}</h3>
+        {% if post.subtitle %}
+        <p class="postLead">{{ post.subtitle }}</p>
+        {% endif %}
+      </header>
+
+      {% if post.how_title or post.how_text %}
+      <div class="how">
+        <h4 class="howTitle">{{ post.how_title | default: "How it works" }}</h4>
+        {% if post.how_text %}
+        <p class="howText">{{ post.how_text }}</p>
+        {% endif %}
+      </div>
+      {% endif %}
+
+      {% if post.images %}
+      <div class="mediaGrid">
+        {% for img in post.images %}
+        <figure class="mediaItem">
+          <img src="{{ site.baseurl }}/{{ img }}" alt="" loading="lazy">
+        </figure>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      {% if post.canva_embed %}
+      <div class="embed">
+        <div class="embedFrame">
+          <iframe
+                  src="{{ post.canva_embed }}"
+                  loading="lazy"
+                  allowfullscreen="allowfullscreen"
+                  allow="fullscreen">
+          </iframe>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if post.content and post.content != "" %}
+      <div class="postBody">
+        {{ post.content }}
+      </div>
+      {% endif %}
+    </article>
+    {% endfor %}
+  </section>
+
+</main>
+
+<!-- FULL BLEED FOOTER -->
+<footer class="bigFooter">
+  <div class="bigFooterInner">
+    <h1 class="footerBig">Alt.Ctrl at Campus Peres</h1>
+  </div>
+</footer>
