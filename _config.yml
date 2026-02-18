@@ -1,0 +1,5 @@
+title: "Alternative Controllers Lab"
+description: "Alt.Ctrl at Campus Peres — blog"
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+timezone: Asia/Jerusalem
