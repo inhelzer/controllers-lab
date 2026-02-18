@@ -70,7 +70,7 @@ body{
 .heroRight{ grid-area:right; }
 
 .heroSiteLogo{ margin-bottom:14px; }
-.siteLogoImg{ width:220px; height:auto; display:block; object-fit:contain; }
+.siteLogoImg{ width:440px; height:auto; display:block; object-fit:contain; }
 
 .schoolTitle{
   font-family:'Reisinger','Assistant',sans-serif;
@@ -256,7 +256,26 @@ body{
 
 /* Mobile */
 @media (max-width: 980px){
-  .heroInner{ grid-template-columns:1fr; grid-template-areas:"left" "right"; }
+  .heroInner{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "left right";
+    gap: 28px;
+    align-items: center;
+  }
+
+  .heroLeft{ grid-area: left; }
+  .heroRight{ grid-area: right; }
+
+
+  .heroImg{
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 18px;
+  }
+
+
   .whyInner{ grid-template-columns:1fr; padding:34px 22px; }
   .whyBig{ text-align:right; font-size:44px; }
   .ctrlWord{ font-size:56px; }
